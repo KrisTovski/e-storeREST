@@ -11,5 +11,6 @@ CREATE TABLE PRODUCT
     active         TINYINT(0),
     units_in_stock INT(11),
     create_time    DATETIME,
-    update_time    DATETIME
+    update_time    DATETIME,
+    category_id    INT
 );
