@@ -1,5 +1,7 @@
 package com.kristovski.estorerest.user;
 
+import lombok.*;
+
 import javax.persistence.*;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,6 +10,10 @@ import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -23,7 +29,6 @@ public class User {
     @NotEmpty
     private String password;
     private boolean enable = false;
-    @Column(name = "create_time")
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
     private boolean locked = false;
