@@ -1,9 +1,6 @@
 package com.kristovski.estorerest.product;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -12,7 +9,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@RequiredArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
