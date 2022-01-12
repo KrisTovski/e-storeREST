@@ -1,6 +1,11 @@
 package com.kristovski.estorerest.product;
 
-import lombok.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.kristovski.estorerest.productCategory.ProductCategory;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -9,10 +14,10 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
-@Getter
 public class Product {
 
     @Id
@@ -29,8 +34,9 @@ public class Product {
     private LocalDateTime createTime;
     @UpdateTimestamp
     private LocalDateTime updateTime;
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    @JsonBackReference
     private ProductCategory category;
 
 }
