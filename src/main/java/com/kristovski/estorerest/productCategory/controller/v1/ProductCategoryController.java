@@ -1,12 +1,14 @@
-package com.kristovski.estorerest.productCategory.v1;
+package com.kristovski.estorerest.productCategory.controller.v1;
 
-import com.kristovski.estorerest.productCategory.ProductCategory;
 import com.kristovski.estorerest.productCategory.ProductCategoryServiceImpl;
+import com.kristovski.estorerest.productCategory.dto.ProductCategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import static com.kristovski.estorerest.productCategory.mapper.ProductCategoryDtoMapper.getProductCategoryDto;
 
 @CrossOrigin("http://localhost:4200")
 @RestController
@@ -24,7 +26,8 @@ public class ProductCategoryController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Page<ProductCategory> getAll(Pageable page) {
-        return productCategoryService.getAll(page);
+    public Page<ProductCategoryDto> getAll(Pageable page) {
+        return getProductCategoryDto(productCategoryService.getAll(page));
     }
+
 }
