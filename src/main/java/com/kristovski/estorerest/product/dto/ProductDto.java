@@ -7,5 +7,6 @@ public record ProductDto(Long id,
                          String description,
                          BigDecimal unitPrice,
                          String imageUrl,
-                         int unitsInStock) {
+                         int unitsInStock,
+                         Long categoryId) {
 }

@@ -21,4 +21,9 @@ public class ProductServiceImpl implements ProductService {
     public Page<Product> getAll(Pageable page) {
         return productRepository.findAll(page);
     }
+
+    @Override
+    public Page<Product> getAllByCategoryId(Long id, Pageable page) {
+        return productRepository.findAllByCategoryId(id, page);
+    }
 }

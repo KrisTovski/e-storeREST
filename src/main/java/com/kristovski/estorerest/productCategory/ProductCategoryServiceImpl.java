@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductCategoryServiceImpl {
+public class ProductCategoryServiceImpl implements ProductCategoryService{
 
     private final ProductCategoryRepository productCategoryRepository;
 
@@ -14,7 +14,7 @@ public class ProductCategoryServiceImpl {
     public ProductCategoryServiceImpl(ProductCategoryRepository productCategoryRepository) {
         this.productCategoryRepository = productCategoryRepository;
     }
-
+    @Override
     public Page<ProductCategory> getAll(Pageable page) {
         return productCategoryRepository.findAll(page);
     }

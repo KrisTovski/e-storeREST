@@ -13,7 +13,8 @@ public class ProductDtoMapper {
                 product.getDescription(),
                 product.getUnitPrice(),
                 product.getImageUrl(),
-                product.getUnitsInStock()));
+                product.getUnitsInStock(),
+                product.getCategory().getId()));
     }
 
 }
