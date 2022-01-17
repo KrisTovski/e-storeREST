@@ -25,7 +25,7 @@ public class ProductCategory {
     private String description;
     private String imageUrl;
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    @JsonManagedReference
+  //  @JsonManagedReference
     private Set<Product> products;
 
 }

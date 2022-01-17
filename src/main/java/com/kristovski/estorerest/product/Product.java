@@ -36,7 +36,7 @@ public class Product {
     private LocalDateTime updateTime;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
-    @JsonBackReference
+   // @JsonBackReference
     private ProductCategory category;
 
 }
